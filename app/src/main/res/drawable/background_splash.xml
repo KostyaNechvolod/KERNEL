@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:drawable="@drawable/splash_background" />
+    <item android:drawable="@android:color/white" />
 
     <item
-            android:height="100dp"
-            android:width="350dp"
-            android:gravity="center"
-            android:drawable="@drawable/kernel_logo">
+            android:width="300dp"
+            android:height="80dp"
+            android:drawable="@drawable/kernel_logo"
+            android:gravity="center">
 
     </item>
 
 </layer-list>
-
-<!--<bitmap
-                android:gravity="center"
-                android:src="@drawable/kernel_logo" />-->
