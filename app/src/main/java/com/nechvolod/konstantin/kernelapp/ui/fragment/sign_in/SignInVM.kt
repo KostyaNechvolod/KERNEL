@@ -11,7 +11,7 @@ class SignInVM : BaseViewModel() {
 
     fun onLoginButtonClicked(){
         loginButtonClickedEvent.value = true
-        navControllerLiveEvent.value = NavigationModel(R.id.action_signInFragment_to_mainActivity)
+        navControllerLiveEvent.value = NavigationModel(actionId = R.id.action_signInFragment_to_main_navigation)
     }
 
     fun openSignUpWebViewFragment(){
