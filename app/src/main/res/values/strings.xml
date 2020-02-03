@@ -3,4 +3,5 @@
     <string name="login">Login</string>
     <string name="email">E-mail</string>
     <string name="password">Password</string>
+    <string name="add_fab">add_fab</string>
 </resources>

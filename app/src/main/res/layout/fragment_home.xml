@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -7,10 +8,30 @@
             android:layout_height="match_parent"
             tools:context=".ui.activity.splash.Splash">
 
-        <TextView
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="HOME"/>
+                android:layout_margin="16dp"
+                tools:layout_editor_absoluteX="130dp"
+                tools:layout_editor_absoluteY="116dp"
+                tools:listitem="@layout/item_ttn" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabAddTtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:borderWidth="0dp"
+                app:rippleColor="@android:color/holo_orange_light"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:src="@android:drawable/ic_input_add"
+                android:tint="@android:color/white"
+                app:elevation="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:pressedTranslationZ="12dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
