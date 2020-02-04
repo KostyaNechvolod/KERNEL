@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.nechvolod.konstantin.kernelapp.R
 import com.nechvolod.konstantin.kernelapp.base.models.NavigationModel
 import com.nechvolod.konstantin.kernelapp.base.models.ToastModel
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -83,7 +84,9 @@ abstract class BaseFragment <D : ViewDataBinding, out T : BaseViewModel>(viewMod
     }
 
     open fun attachFragmentViews(view: View) {
-
+        mViewDataBinding.root.findViewById<View>(R.id.ivBack)?.setOnClickListener {
+            mActivity.onBackPressed()
+        }
     }
 
     protected fun onNavigateTo(navigationModel: NavigationModel) {

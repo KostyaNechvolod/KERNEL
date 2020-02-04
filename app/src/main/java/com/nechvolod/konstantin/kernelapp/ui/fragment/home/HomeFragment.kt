@@ -13,8 +13,6 @@ import com.nechvolod.konstantin.kernelapp.ui.adapter.HomeTtnAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
-
-
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeVM>(HomeVM::class) {
     override fun getBindingViewModelId(): Int = BR.vm
 
@@ -61,3 +59,31 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeVM>(HomeVM::class) {
         }
     }
 }
+
+/*
+
+//creating a popup menu
+val wrapper = ContextThemeWrapper(holder.itemView.context, R.style.PopupMenu)
+val popup = PopupMenu(wrapper, holder.itemView.textViewOptions)
+//inflating menu from xml resource
+popup.inflate(R.menu.shopping_cart_item_menu)
+//adding click listener
+popup.setOnMenuItemClickListener { item ->
+    when (item.itemId) {
+        R.id.editOrder -> {
+            onEditOrderPressed?.invoke(selectEntity.id)
+            true
+        }
+        R.id.deleteOrder -> {
+            onDeletePressed?.invoke(selectEntity.id)
+            true
+        }
+        else -> false
+    }
+}
+//displaying the popup
+
+val menuHelper =
+    MenuPopupHelper(wrapper, popup.menu as MenuBuilder, holder.itemView.textViewOptions)
+menuHelper.show()
+*/

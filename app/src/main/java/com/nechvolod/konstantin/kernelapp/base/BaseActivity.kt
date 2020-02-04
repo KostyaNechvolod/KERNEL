@@ -4,6 +4,7 @@ import android.app.ActivityManager
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.annotation.ColorInt
@@ -11,6 +12,7 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import com.nechvolod.konstantin.kernelapp.R
 import org.koin.android.viewmodel.ext.android.viewModel
 import kotlin.reflect.KClass
 
@@ -40,7 +42,11 @@ abstract class BaseActivity<D : ViewDataBinding, out T : BaseViewModel>(viewMode
         lifecycle.removeObserver(mViewModel)
     }
 
-    open fun initViews(savedInstanceState: Bundle?) {}
+    open fun initViews(savedInstanceState: Bundle?) {
+        mViewDataBinding.root.findViewById<View>(R.id.ivBack)?.setOnClickListener {
+            onBackPressed()
+        }
+    }
 
     open fun attachViews() {}
 
