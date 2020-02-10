@@ -6,6 +6,8 @@ buildscript {
     ext.okHttpVersion = '3.11.0'
     ext.retrofitVersion = '2.4.0'
     ext.androidLifecycle = '2.2.0'
+    ext.version_room = "2.2.3"
+    ext.version_room_coroutine = "2.1.0-alpha04"
     repositories {
         google()
         jcenter()

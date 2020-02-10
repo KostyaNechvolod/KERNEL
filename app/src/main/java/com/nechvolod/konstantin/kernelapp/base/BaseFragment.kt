@@ -1,5 +1,6 @@
 package com.nechvolod.konstantin.kernelapp.base
 
+import android.app.DatePickerDialog
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.LayoutRes
+import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -17,6 +19,7 @@ import com.nechvolod.konstantin.kernelapp.R
 import com.nechvolod.konstantin.kernelapp.base.models.NavigationModel
 import com.nechvolod.konstantin.kernelapp.base.models.ToastModel
 import org.koin.android.viewmodel.ext.android.viewModel
+import java.util.*
 import kotlin.reflect.KClass
 
 abstract class BaseFragment <D : ViewDataBinding, out T : BaseViewModel>(viewModelClass: KClass<T>) : Fragment() {
@@ -111,5 +114,45 @@ abstract class BaseFragment <D : ViewDataBinding, out T : BaseViewModel>(viewMod
             message = toastModel.message!!
         }
         Toast.makeText(mActivity, message, Toast.LENGTH_SHORT).show()
+    }
+
+    protected fun showDialog(){
+        val builder = AlertDialog.Builder(requireContext())
+        // Set the alert dialog title
+        builder.setTitle("App background color")
+        // Display a message on alert dialog
+        builder.setMessage("Are you want to set the app background color to RED?")
+        // Set a positive button and its click listener on alert dialog
+        builder.setPositiveButton("YES"){dialog, which ->
+            // Do something when user press the positive button
+            Toast.makeText(requireContext(),"Ok, we change the app background.",Toast.LENGTH_SHORT).show()
+        }
+        // Display a negative button on alert dialog
+        builder.setNegativeButton("No"){dialog,which ->
+            Toast.makeText(requireContext(),"You are not agree.",Toast.LENGTH_SHORT).show()
+        }
+        // Display a neutral button on alert dialog
+        builder.setNeutralButton("Cancel"){_,_ ->
+            Toast.makeText(requireContext(),"You cancelled the dialog.",Toast.LENGTH_SHORT).show()
+        }
+        // Finally, make the alert dialog using builder
+        val dialog: AlertDialog = builder.create()
+        // Display the alert dialog on app interface
+        dialog.show()
+    }
+
+    protected fun showDatePickerDialog(){ // todo return date via lambda
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
+        val dpd = DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+
+             val date = GregorianCalendar(year + 1900, monthOfYear, dayOfMonth)
+
+        }, year, month, day)
+
+        dpd.show()
     }
 }

@@ -6,23 +6,5 @@
     <fragment
             android:id="@+id/signInFragment"
             android:name="com.nechvolod.konstantin.kernelapp.ui.fragment.sign_in.SignInFragment"
-            android:label="SignInFragment" >
-        <action
-                android:id="@+id/action_signInFragment_to_mainActivity"
-                app:destination="@+id/mainActivity"
-                app:enterAnim="@anim/fragment_fade_enter"
-                app:launchSingleTop="true"
-                app:popUpToInclusive="true" />
-        <action
-                android:id="@+id/action_signInFragment_to_main_navigation"
-                app:destination="@id/main_navigation"
-                app:launchSingleTop="true"
-                app:popUpTo="@+id/main_navigation"
-                app:popUpToInclusive="true" />
-    </fragment>
-    <activity
-            android:id="@+id/mainActivity"
-            android:name="com.nechvolod.konstantin.kernelapp.ui.activity.main.MainActivity"
-            android:label="MainActivity" />
-    <include app:graph="@navigation/main_navigation" />
+            android:label="SignInFragment" />
 </navigation>
