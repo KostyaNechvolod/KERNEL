@@ -1,9 +1,7 @@
 package com.nechvolod.konstantin.kernelapp.ui.fragment.sign_in
 
-import com.nechvolod.konstantin.kernelapp.R
 import com.nechvolod.konstantin.kernelapp.base.BaseViewModel
 import com.nechvolod.konstantin.kernelapp.base.arch.SingleLiveEvent
-import com.nechvolod.konstantin.kernelapp.base.models.NavigationModel
 
 class SignInVM : BaseViewModel() {
 

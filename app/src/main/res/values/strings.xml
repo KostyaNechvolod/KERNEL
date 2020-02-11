@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">KernelApp</string>
+    <string name="login">Login</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="add_fab">add_fab</string>
+    <string name="home_title">Home Screen</string>
+    <string name="filter_by_ttn">Filter by TTN number</string>
+    <string name="filter_by_number_plate">Filter by number plate number</string>
+    <string name="filter_by_date">Filter by date</string>
 </resources>

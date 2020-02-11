@@ -60,9 +60,15 @@ dependencies {
     /* Livedata */
     implementation "androidx.lifecycle:lifecycle-extensions:$androidLifecycle"
     implementation "androidx.lifecycle:lifecycle-viewmodel:$androidLifecycle"
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.1'
 
     /* Timber */
     implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    /*Room*/
+    implementation "androidx.room:room-runtime:$version_room"
+    implementation "androidx.room:room-coroutines:$version_room_coroutine"
+    implementation "androidx.room:room-rxjava2:$version_room"
+    kapt "androidx.room:room-compiler:$version_room"
 }
