@@ -19,6 +19,8 @@ class TtnDetailsFragment :
         const val ID_KEY = "ttn_id"
     }
 
+    var id1: Int = -1
+
     override fun getBindingViewModelId(): Int = BR.vm
 
     override fun getLayoutId(): Int = R.layout.fragment_ttn_details
@@ -30,6 +32,7 @@ class TtnDetailsFragment :
         var id = arguments?.getInt(ID_KEY)
         id?.let {
             mViewModel.getData(it)
+            id1 = it
         }
         initRecycler()
     }
@@ -41,7 +44,8 @@ class TtnDetailsFragment :
         rvSec.adapter = secListAdapter
 
         mViewModel.data?.observe(this, Observer {
-            secListAdapter.replace(it.codeList)
+            secListAdapter.replace(it.find {
+                it.id == id1 }!!.codeList)
         })
 
         val divider = DividerItemDecoration(rvSec.context, linearLayoutManager.orientation)
