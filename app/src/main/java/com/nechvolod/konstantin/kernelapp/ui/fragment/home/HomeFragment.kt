@@ -5,6 +5,7 @@ import androidx.appcompat.view.ContextThemeWrapper
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.appcompat.view.menu.MenuPopupHelper
 import androidx.appcompat.widget.PopupMenu
+import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,6 +23,11 @@ import kotlinx.android.synthetic.main.toolbar_home.*
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeVM>(HomeVM::class) {
+
+    companion object {
+        const val ID_KEY = "ttn_id"
+    }
+
     override fun getBindingViewModelId(): Int = BR.vm
 
     override fun getLayoutId(): Int = R.layout.fragment_home
@@ -101,7 +107,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeVM>(HomeVM::class) {
         rvTtn.addItemDecoration(divider)
         homeAdapter.setOnClickListener = {
             showToast(ToastModel(message = it.codeList[0].toString()))
-            onNavigateTo(NavigationModel(R.id.action_homeFragment_to_ttnDetailsFragment))
+            val bundle = bundleOf(ID_KEY to it.id)
+            onNavigateTo(NavigationModel(R.id.action_homeFragment_to_ttnDetailsFragment, bundle))
         }
     }
 }

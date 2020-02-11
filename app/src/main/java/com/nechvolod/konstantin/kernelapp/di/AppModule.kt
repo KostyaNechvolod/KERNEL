@@ -66,5 +66,5 @@ val appModule = module {
     viewModel { MainVM() }
     viewModel { HomeVM( get()) }
     viewModel { SignInVM() }
-    viewModel { TtnDetailsVM() }
+    viewModel { TtnDetailsVM(get()) }
 }

@@ -13,6 +13,9 @@ interface TtnDao {
     @Query("SELECT * FROM ttn")
     fun findAll(): LiveData<List<TtnModel>>
 
+    @Query("SELECT * FROM ttn WHERE id = :id")
+    fun findTtnById(id: Int): LiveData<TtnModel>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun add(users: List<TtnModel>)
 }
