@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_ttn_details.*
 class TtnDetailsFragment :
     BaseFragment<FragmentTtnDetailsBinding, TtnDetailsVM>(TtnDetailsVM::class) {
 
-    companion object{
+    companion object {
         const val ID_KEY = "ttn_id"
     }
 
@@ -37,7 +37,7 @@ class TtnDetailsFragment :
         initRecycler()
     }
 
-    fun initRecycler() {
+    private fun initRecycler() {
         val linearLayoutManager =
             LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         rvSec.layoutManager = linearLayoutManager
@@ -45,7 +45,16 @@ class TtnDetailsFragment :
 
         mViewModel.data?.observe(this, Observer {
             secListAdapter.replace(it.find {
-                it.id == id1 }!!.codeList)
+                it.id == id1
+            }!!.codeList)
+            val item = it.find {
+                it.id == id1
+            }
+            etNumberTTN.setText(item?.ttnNumber)
+            etDateTTN.setText(item?.ttnDate)
+            etAutoNumber.setText(item?.trackPlate)
+            etTrailerNumber.setText(item?.trailerPlate)
+            etDriver.setText(item?.driverName)
         })
 
         val divider = DividerItemDecoration(rvSec.context, linearLayoutManager.orientation)
