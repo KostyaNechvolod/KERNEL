@@ -2,6 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+                name="vm"
+                type="com.nechvolod.konstantin.kernelapp.ui.fragment.create_ttn.CreateTtnVM" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -27,6 +33,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text='@{vm.fields["ttn_number"]}'
                     android:hint="Number TTN"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -46,6 +53,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text='@{vm.fields["ttn_date"]}'
                     android:hint="Date TTN"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -64,7 +72,8 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Auto Number"/>
+                    android:text='@{vm.fields["truck_number"]}'
+                    android:hint="Truck Number"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -82,6 +91,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text='@{vm.fields["trailer_number"]}'
                     android:hint="Trailer number"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -100,6 +110,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text='@{vm.fields["driver"]}'
                     android:hint="Driver"/>
 
         </com.google.android.material.textfield.TextInputLayout>
