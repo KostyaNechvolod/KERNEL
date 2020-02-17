@@ -5,6 +5,8 @@
     <string name="password">Password</string>
     <string name="add_fab">add_fab</string>
     <string name="home_title">Home Screen</string>
+    <string name="ttn_details_title">Ttn Details</string>
+    <string name="create_ttn_title">Create Ttn</string>
     <string name="filter_by_ttn">Filter by TTN number</string>
     <string name="filter_by_number_plate">Filter by number plate number</string>
     <string name="filter_by_date">Filter by date</string>

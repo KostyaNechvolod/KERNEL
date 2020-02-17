@@ -10,6 +10,9 @@
         <action
                 android:id="@+id/action_homeFragment_to_ttnDetailsFragment"
                 app:destination="@id/ttnDetailsFragment" />
+        <action
+                android:id="@+id/action_homeFragment_to_createTtnFragment"
+                app:destination="@id/createTtnFragment" />
     </fragment>
     <fragment
             android:id="@+id/ttnDetailsFragment"
@@ -19,4 +22,8 @@
                 android:name="ttn_id"
                 app:argType="integer" />
     </fragment>
+    <fragment
+            android:id="@+id/createTtnFragment"
+            android:name="com.nechvolod.konstantin.kernelapp.ui.fragment.create_ttn.CreateTtnFragment"
+            android:label="CreateTtnFragment" />
 </navigation>

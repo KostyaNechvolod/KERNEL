@@ -50,11 +50,11 @@ class TtnDetailsFragment :
             val item = it.find {
                 it.id == id1
             }
-            etNumberTTN.setText(item?.ttnNumber)
-            etDateTTN.setText(item?.ttnDate)
-            etAutoNumber.setText(item?.trackPlate)
-            etTrailerNumber.setText(item?.trailerPlate)
-            etDriver.setText(item?.driverName)
+            etNumberTTN.editText?.setText(item?.ttnNumber)
+            etDateTTN.editText?.setText(item?.ttnDate)
+            etAutoNumber.editText?.setText(item?.trackPlate)
+            etTrailerNumber.editText?.setText(item?.trailerPlate)
+            etDriver.editText?.setText(item?.driverName)
         })
 
         val divider = DividerItemDecoration(rvSec.context, linearLayoutManager.orientation)

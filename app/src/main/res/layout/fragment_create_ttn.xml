@@ -8,7 +8,7 @@
 
         <include
                 android:id="@+id/toolbar"
-                layout="@layout/toolbar_ttn_details"
+                layout="@layout/toolbar_create_ttn"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -105,7 +105,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvSec"
+                android:id="@+id/rvSec"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
