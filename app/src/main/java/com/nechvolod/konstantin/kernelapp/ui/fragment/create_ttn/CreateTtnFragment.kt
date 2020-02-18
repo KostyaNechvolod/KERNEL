@@ -5,6 +5,7 @@ import com.nechvolod.konstantin.kernelapp.BR
 import com.nechvolod.konstantin.kernelapp.R
 import com.nechvolod.konstantin.kernelapp.base.BaseFragment
 import com.nechvolod.konstantin.kernelapp.databinding.FragmentCreateTtnBinding
+import kotlinx.android.synthetic.main.toolbar_create_ttn.*
 
 class CreateTtnFragment : BaseFragment<FragmentCreateTtnBinding, CreateTtnVM>(CreateTtnVM::class) {
     override fun getBindingViewModelId(): Int = BR.vm
@@ -13,6 +14,8 @@ class CreateTtnFragment : BaseFragment<FragmentCreateTtnBinding, CreateTtnVM>(Cr
 
     override fun initFragmentViews(savedInstanceState: Bundle?) {
         super.initFragmentViews(savedInstanceState)
-
+        tvCreateItem.setOnClickListener {
+            mViewModel.additemToDb()
+        }
     }
 }

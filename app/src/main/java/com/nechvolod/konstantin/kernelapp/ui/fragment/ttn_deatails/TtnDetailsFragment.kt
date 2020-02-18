@@ -43,13 +43,8 @@ class TtnDetailsFragment :
         rvSec.layoutManager = linearLayoutManager
         rvSec.adapter = secListAdapter
 
-        mViewModel.data?.observe(this, Observer {
-            secListAdapter.replace(it.find {
-                it.id == id1
-            }!!.codeList)
-            val item = it.find {
-                it.id == id1
-            }
+        mViewModel.data?.observe(this, Observer {item ->
+            secListAdapter.replace(item.codeList)
             etNumberTTN.editText?.setText(item?.ttnNumber)
             etDateTTN.editText?.setText(item?.ttnDate)
             etAutoNumber.editText?.setText(item?.trackPlate)
@@ -61,7 +56,6 @@ class TtnDetailsFragment :
         divider.setDrawable(requireContext().getDrawable(R.drawable.rv_divider)!!)
         rvSec.addItemDecoration(divider)
         secListAdapter.setOnClickListener = {
-
         }
     }
 }

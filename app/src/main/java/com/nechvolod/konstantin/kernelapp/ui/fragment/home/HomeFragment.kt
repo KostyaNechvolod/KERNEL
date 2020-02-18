@@ -103,7 +103,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeVM>(HomeVM::class) {
         divider.setDrawable(requireContext().getDrawable(R.drawable.rv_divider)!!)
         rvTtn.addItemDecoration(divider)
         homeAdapter.setOnClickListener = {
-            mViewModel.navigateToTtnDetailsFragment(it.id)
+            mViewModel.navigateToTtnDetailsFragment(it.id!!)
         }
     }
 }
