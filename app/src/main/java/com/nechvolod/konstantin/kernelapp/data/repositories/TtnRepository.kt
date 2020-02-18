@@ -17,14 +17,6 @@ class TtnRepository( private val ttnDao: TtnDao) {
         return runBlocking {
             async { ttnDao.findTtnById(id)}.await()
         }
-        /*lateinit var returnData: LiveData<TtnModel>
-        withContext(Dispatchers.IO){
-            val data = withContext(Dispatchers.Default) {
-                ttnDao.findTtnById(id)
-            }
-            returnData = data.await()
-        }
-        return returnData*/
     }
 
     suspend fun refresh() {
@@ -50,6 +42,12 @@ class TtnRepository( private val ttnDao: TtnDao) {
     suspend fun addItem(ttn: TtnModel){
         withContext(Dispatchers.IO){
             ttnDao.addItem(ttn)
+        }
+    }
+
+    suspend fun updateSecList(list: List<TtnModel.Code>, id: Int){
+        withContext(Dispatchers.IO){
+            ttnDao.updateTtnSecList(list, id)
         }
     }
 }

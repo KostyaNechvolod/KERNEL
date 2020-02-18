@@ -50,6 +50,7 @@ class TtnDetailsFragment :
             etAutoNumber.editText?.setText(item?.trackPlate)
             etTrailerNumber.editText?.setText(item?.trailerPlate)
             etDriver.editText?.setText(item?.driverName)
+            etSender.editText?.setText(item?.senderName)
         })
 
         val divider = DividerItemDecoration(rvSec.context, linearLayoutManager.orientation)
