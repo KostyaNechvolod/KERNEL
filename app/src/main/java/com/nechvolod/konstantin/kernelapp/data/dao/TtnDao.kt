@@ -20,7 +20,7 @@ interface TtnDao {
     fun addList(ttnList: List<TtnModel>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun addItem(ttn: TtnModel)
+    fun addItem(ttn: TtnModel):Long
 
     @Query("UPDATE ttn SET codeList = :list WHERE id == :id")
     fun updateTtnSecList(list: List<TtnModel.Code>, id: Int)

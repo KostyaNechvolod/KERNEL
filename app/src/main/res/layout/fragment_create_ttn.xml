@@ -3,6 +3,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
                 name="vm"
                 type="com.nechvolod.konstantin.kernelapp.ui.fragment.create_ttn.CreateTtnVM" />
@@ -23,18 +24,18 @@
                 android:id="@+id/etNumberTTN"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/toolbar" >
+                app:layout_constraintTop_toBottomOf="@id/toolbar">
 
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text='@{vm.fields["ttn_number"]}'
-                    android:hint="Number TTN"/>
+                    android:hint="Number TTN"
+                    android:text='@{vm.fields["ttn_number"]}' />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -42,19 +43,19 @@
                 android:id="@+id/etDateTTN"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:inputType="date"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etNumberTTN" >
+                app:layout_constraintTop_toBottomOf="@+id/etNumberTTN">
 
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text='@{vm.fields["ttn_date"]}'
-                    android:hint="Date TTN"/>
+                    android:hint="Date TTN"
+                    android:text='@{vm.fields["ttn_date"]}' />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,18 +63,18 @@
                 android:id="@+id/etAutoNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etDateTTN" >
+                app:layout_constraintTop_toBottomOf="@+id/etDateTTN">
 
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text='@{vm.fields["truck_number"]}'
-                    android:hint="Truck Number"/>
+                    android:hint="Truck Number"
+                    android:text='@{vm.fields["truck_number"]}' />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -81,8 +82,8 @@
                 android:id="@+id/etTrailerNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -91,8 +92,8 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text='@{vm.fields["trailer_number"]}'
-                    android:hint="Trailer number"/>
+                    android:hint="Trailer number"
+                    android:text='@{vm.fields["trailer_number"]}' />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,18 +101,18 @@
                 android:id="@+id/etDriver"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etTrailerNumber" >
+                app:layout_constraintTop_toBottomOf="@+id/etTrailerNumber">
 
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text='@{vm.fields["driver"]}'
-                    android:hint="Driver"/>
+                    android:hint="Driver"
+                    android:text='@{vm.fields["driver"]}' />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -133,16 +134,32 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+                android:id="@+id/tvAddZPU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp"
+                android:text="@string/btn_add"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etSender"/>
+
+
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvSec"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_height="0dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etSender"/>
+                app:layout_constraintTop_toBottomOf="@+id/tvAddZPU" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

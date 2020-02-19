@@ -15,13 +15,14 @@ class CreateTtnVM (private val userRepository: TtnRepository) : BaseViewModel() 
     val loadingState: LiveData<LoadingState>
         get() = _loadingState
 
-    val fields: MutableMap<String, MutableLiveData<String>?> = mutableMapOf(
-        "ttn_number" to MutableLiveData(),
-        "ttn_date" to MutableLiveData(),
-        "truck_number" to MutableLiveData(),
-        "trailer_number" to MutableLiveData(),
-        "driver" to MutableLiveData()
+    val fields: MutableMap<String, MutableLiveData<String>> = mutableMapOf(
+        "ttn_number" to MutableLiveData(""),
+        "ttn_date" to MutableLiveData(""),
+        "truck_number" to MutableLiveData(""),
+        "trailer_number" to MutableLiveData(""),
+        "driver" to MutableLiveData("")
     )
+    val codeList = MutableLiveData<List<TtnModel.Code>>()
 
     fun additemToDb() {
         viewModelScope.launch {
@@ -34,7 +35,7 @@ class CreateTtnVM (private val userRepository: TtnRepository) : BaseViewModel() 
                     trackPlate = (fields["ttn_number"]?.value!!),
                     driverName = (fields["ttn_number"]?.value!!),
                     senderName = (fields["ttn_number"]?.value!!),
-                    codeList = listOf()
+                    codeList = codeList.value!!
                     ))
                 _loadingState.value = LoadingState.LOADED
             } catch (e: Exception) {

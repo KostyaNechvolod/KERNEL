@@ -11,4 +11,6 @@
     <string name="filter_by_ttn">Filter by TTN number</string>
     <string name="filter_by_number_plate">Filter by number plate number</string>
     <string name="filter_by_date">Filter by date</string>
+    <string name="btn_add">Add</string>
+    <string name="hint_zpu_code">Zpu number</string>
 </resources>

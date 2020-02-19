@@ -39,8 +39,8 @@ class TtnRepository( private val ttnDao: TtnDao) {
         }
     }
 
-    suspend fun addItem(ttn: TtnModel){
-        withContext(Dispatchers.IO){
+    suspend fun addItem(ttn: TtnModel): Long{
+        return withContext(Dispatchers.IO){
             ttnDao.addItem(ttn)
         }
     }

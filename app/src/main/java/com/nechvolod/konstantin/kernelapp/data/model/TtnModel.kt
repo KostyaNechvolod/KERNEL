@@ -18,7 +18,7 @@ data class TtnModel(
     val codeList: List<Code>
 ) {
     data class Code(
-        val codeNumber: String,
-        val isGood: Boolean
+        var codeNumber: String,
+        var isGood: Boolean = false
     )
 }
