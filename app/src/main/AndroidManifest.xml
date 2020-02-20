@@ -24,7 +24,7 @@
                 android:theme="@style/AppTheme"/>
         <activity android:name=".ui.activity.main.MainActivity"
                 android:theme="@style/AppTheme"
-                android:windowSoftInputMode="adjustResize"/>
+                android:windowSoftInputMode="stateHidden|adjustPan"/>
     </application>
 
 </manifest>

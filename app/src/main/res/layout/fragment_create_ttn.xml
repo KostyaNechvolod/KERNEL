@@ -34,7 +34,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Number TTN"
+                    android:hint="@string/ttn_number"
                     android:text='@={vm.fields["ttn_number"]}' />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -54,7 +54,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Date TTN"
+                    android:hint="@string/ttn_date"
                     android:text='@={vm.fields["ttn_date"]}' />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -73,7 +73,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Truck Number"
+                    android:hint="@string/truck_plate"
                     android:text='@={vm.fields["truck_number"]}' />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -92,7 +92,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Trailer number"
+                    android:hint="@string/trailer_plate"
                     android:text='@={vm.fields["trailer_number"]}' />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -111,7 +111,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Driver"
+                    android:hint="@string/driver_name"
                     android:text='@={vm.fields["driver"]}' />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -130,7 +130,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Sender"
+                    android:hint="@string/sender_name"
                     android:text='@={vm.fields["sender"]}'/>
 
         </com.google.android.material.textfield.TextInputLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KernelApp</string>
+    <string name="btn_add">Додати ЗПП</string>
+    <string name="create_ttn_button">Створити</string>
+    <string name="create_ttn_title">Створити ТТН</string>
+    <string name="filter_by_date">Сортувати за датою</string>
+    <string name="filter_by_number_plate">Сортувати за номером</string>
+    <string name="filter_by_ttn">Сортувати за номером ТТН</string>
+    <string name="hint_zpu_code">Номер ЗПП</string>
+    <string name="home_title">Головний екран</string>
+    <string name="login">Логін</string>
+    <string name="password">Пароль</string>
+    <string name="ttn_details_title">Деталі ТТН</string>
+    <string name="sender_name">Відправник</string>
+    <string name="trailer_plate">Номер причіпа</string>
+    <string name="truck_plate">Номер т/з</string>
+    <string name="ttn_date">Дата ТТН</string>
+    <string name="ttn_number">Номер ТТН</string>
+    <string name="driver_name">Ім\'я водія</string>
+</resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">KernelApp</string>
     <string name="login">Login</string>
-    <string name="email">E-mail</string>
+    <string name="email" translatable="false">E-mail</string>
     <string name="password">Password</string>
-    <string name="add_fab">add_fab</string>
+    <string name="add_fab" translatable="false">add_fab</string>
     <string name="home_title">Home Screen</string>
     <string name="ttn_details_title">Ttn Details</string>
     <string name="create_ttn_title">Create Ttn</string>
@@ -11,6 +11,12 @@
     <string name="filter_by_ttn">Filter by TTN number</string>
     <string name="filter_by_number_plate">Filter by number plate number</string>
     <string name="filter_by_date">Filter by date</string>
-    <string name="btn_add">Add</string>
-    <string name="hint_zpu_code">Zpu number</string>
+    <string name="btn_add">Add LCD</string>
+    <string name="hint_zpu_code">LCD number</string>
+    <string name="ttn_number">TTN Number</string>
+    <string name="ttn_date">TTN Date</string>
+    <string name="truck_plate">Truck Plate</string>
+    <string name="trailer_plate">Trailer Plate</string>
+    <string name="driver_name">Driver Name</string>
+    <string name="sender_name">Sender Name</string>
 </resources>

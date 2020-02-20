@@ -25,5 +25,9 @@
     <fragment
             android:id="@+id/createTtnFragment"
             android:name="com.nechvolod.konstantin.kernelapp.ui.fragment.create_ttn.CreateTtnFragment"
-            android:label="CreateTtnFragment" />
+            android:label="CreateTtnFragment" >
+        <action
+                android:id="@+id/action_createTtnFragment_to_homeFragment"
+                app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>
