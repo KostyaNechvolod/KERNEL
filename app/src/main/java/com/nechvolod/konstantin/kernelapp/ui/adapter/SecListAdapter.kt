@@ -37,8 +37,9 @@ class SecListAdapter: BaseAdapter<TtnModel.Code, SecListAdapter.ViewHolder>() {
             with(binding){
                 entity = item
                 checkbox.isChecked = item.isGood
+
                 textListener.updatePosition(adapterPosition)
-//                textView.addTextChangedListener(textListener)
+                textView.addTextChangedListener(textListener)
             }
         }
     }

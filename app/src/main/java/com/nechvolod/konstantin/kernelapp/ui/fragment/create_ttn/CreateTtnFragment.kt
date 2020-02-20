@@ -33,7 +33,10 @@ class CreateTtnFragment : BaseFragment<FragmentCreateTtnBinding, CreateTtnVM>(Cr
 
         mViewModel.loadingState.observe(this, Observer {
             when(it){
-                LoadingState.LOADED-> showToast(ToastModel("Success"))
+                LoadingState.LOADED-> {
+                    showToast(ToastModel("Success"))
+                    navController.navigate(R.id.action_createTtnFragment_to_homeFragment)
+                }
             }
         })
     }
