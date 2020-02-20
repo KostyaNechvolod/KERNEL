@@ -7,7 +7,7 @@ import com.nechvolod.konstantin.kernelapp.utils.GsonConverter
 
 @Entity(tableName = "ttn")
 data class TtnModel(
-    @PrimaryKey val id: Int,
+    @PrimaryKey(autoGenerate = true) var id: Int?= null,
     val ttnNumber: String,
     val ttnDate: String,
     val trailerPlate: String,
@@ -18,7 +18,7 @@ data class TtnModel(
     val codeList: List<Code>
 ) {
     data class Code(
-        val codeNumber: String,
-        val isGood: Boolean
+        var codeNumber: String,
+        var isGood: Boolean = false
     )
 }

@@ -15,6 +15,7 @@ import com.nechvolod.konstantin.kernelapp.data.repositories.TtnRepository
 import com.nechvolod.konstantin.kernelapp.ui.activity.auth.AuthVM
 import com.nechvolod.konstantin.kernelapp.ui.activity.main.MainVM
 import com.nechvolod.konstantin.kernelapp.ui.activity.splash.SplashVM
+import com.nechvolod.konstantin.kernelapp.ui.fragment.create_ttn.CreateTtnVM
 import com.nechvolod.konstantin.kernelapp.ui.fragment.home.HomeVM
 import com.nechvolod.konstantin.kernelapp.ui.fragment.sign_in.SignInVM
 import com.nechvolod.konstantin.kernelapp.ui.fragment.ttn_deatails.TtnDetailsVM
@@ -67,4 +68,5 @@ val appModule = module {
     viewModel { HomeVM( get()) }
     viewModel { SignInVM() }
     viewModel { TtnDetailsVM(get()) }
+    viewModel { CreateTtnVM(get()) }
 }

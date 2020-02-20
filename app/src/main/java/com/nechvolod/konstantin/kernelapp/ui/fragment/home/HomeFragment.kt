@@ -5,7 +5,6 @@ import androidx.appcompat.view.ContextThemeWrapper
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.appcompat.view.menu.MenuPopupHelper
 import androidx.appcompat.widget.PopupMenu
-import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nechvolod.konstantin.kernelapp.BR
 import com.nechvolod.konstantin.kernelapp.R
 import com.nechvolod.konstantin.kernelapp.base.BaseFragment
-import com.nechvolod.konstantin.kernelapp.base.models.NavigationModel
 import com.nechvolod.konstantin.kernelapp.base.models.ToastModel
 import com.nechvolod.konstantin.kernelapp.databinding.FragmentHomeBinding
 import com.nechvolod.konstantin.kernelapp.ui.adapter.HomeTtnAdapter
@@ -75,10 +73,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeVM>(HomeVM::class) {
             menuHelper.show()
         }
         fabAddTtn.setOnClickListener {
-            showToast(ToastModel(message = "Fab pressed!"))
+            mViewModel.navigateToCreateTtnFragment()
         }
         rvTtn.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 if (dy > 0 || dy < 0 && fabAddTtn.isShown)
                     fabAddTtn.hide()
@@ -106,9 +103,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeVM>(HomeVM::class) {
         divider.setDrawable(requireContext().getDrawable(R.drawable.rv_divider)!!)
         rvTtn.addItemDecoration(divider)
         homeAdapter.setOnClickListener = {
-            showToast(ToastModel(message = it.codeList[0].toString()))
-            val bundle = bundleOf(ID_KEY to it.id)
-            onNavigateTo(NavigationModel(R.id.action_homeFragment_to_ttnDetailsFragment, bundle))
+            mViewModel.navigateToTtnDetailsFragment(it.id!!)
         }
     }
 }

@@ -2,13 +2,20 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+                name="vm"
+                type="com.nechvolod.konstantin.kernelapp.ui.fragment.create_ttn.CreateTtnVM" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
         <include
                 android:id="@+id/toolbar"
-                layout="@layout/toolbar_ttn_details"
+                layout="@layout/toolbar_create_ttn"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -27,7 +34,8 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Number TTN" />
+                    android:hint="Number TTN"
+                    android:text='@={vm.fields["ttn_number"]}' />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -46,7 +54,8 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Date TTN" />
+                    android:hint="Date TTN"
+                    android:text='@={vm.fields["ttn_date"]}' />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,7 +73,8 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Auto Number" />
+                    android:hint="Truck Number"
+                    android:text='@={vm.fields["truck_number"]}' />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -82,7 +92,8 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Trailer number" />
+                    android:hint="Trailer number"
+                    android:text='@={vm.fields["trailer_number"]}' />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,7 +111,8 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Driver" />
+                    android:hint="Driver"
+                    android:text='@={vm.fields["driver"]}' />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -118,20 +130,37 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Sender" />
+                    android:hint="Sender"
+                    android:text='@={vm.fields["sender"]}'/>
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+                android:id="@+id/tvAddZPU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp"
+                android:text="@string/btn_add"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etSender"/>
+
 
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvSec"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etSender" />
+                app:layout_constraintTop_toBottomOf="@+id/tvAddZPU" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

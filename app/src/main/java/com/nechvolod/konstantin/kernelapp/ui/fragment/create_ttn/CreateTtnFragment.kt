@@ -1,4 +1,4 @@
-package com.nechvolod.konstantin.kernelapp.ui.fragment.ttn_deatails
+package com.nechvolod.konstantin.kernelapp.ui.fragment.create_ttn
 
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -8,33 +8,34 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nechvolod.konstantin.kernelapp.BR
 import com.nechvolod.konstantin.kernelapp.R
 import com.nechvolod.konstantin.kernelapp.base.BaseFragment
-import com.nechvolod.konstantin.kernelapp.databinding.FragmentTtnDetailsBinding
+import com.nechvolod.konstantin.kernelapp.base.models.ToastModel
+import com.nechvolod.konstantin.kernelapp.data.model.TtnModel
+import com.nechvolod.konstantin.kernelapp.databinding.FragmentCreateTtnBinding
 import com.nechvolod.konstantin.kernelapp.ui.adapter.SecListAdapter
-import kotlinx.android.synthetic.main.fragment_ttn_details.*
+import com.nechvolod.konstantin.kernelapp.utils.LoadingState
+import kotlinx.android.synthetic.main.fragment_create_ttn.*
+import kotlinx.android.synthetic.main.toolbar_create_ttn.*
 
-class TtnDetailsFragment :
-    BaseFragment<FragmentTtnDetailsBinding, TtnDetailsVM>(TtnDetailsVM::class) {
-
-    companion object {
-        const val ID_KEY = "ttn_id"
-    }
-
-    var id1: Int = -1
-
+class CreateTtnFragment : BaseFragment<FragmentCreateTtnBinding, CreateTtnVM>(CreateTtnVM::class) {
     override fun getBindingViewModelId(): Int = BR.vm
 
-    override fun getLayoutId(): Int = R.layout.fragment_ttn_details
+    override fun getLayoutId(): Int = R.layout.fragment_create_ttn
 
     private val secListAdapter: SecListAdapter by lazy { SecListAdapter() }
 
     override fun initFragmentViews(savedInstanceState: Bundle?) {
         super.initFragmentViews(savedInstanceState)
-        var id = arguments?.getInt(ID_KEY)
-        id?.let {
-            mViewModel.getData(it)
-            id1 = it
+        tvCreateItem.setOnClickListener {
+            mViewModel.codeList.value = secListAdapter.getItems()
+            mViewModel.additemToDb()
         }
         initRecycler()
+
+        mViewModel.loadingState.observe(this, Observer {
+            when(it){
+                LoadingState.LOADED-> showToast(ToastModel("Success"))
+            }
+        })
     }
 
     private fun initRecycler() {
@@ -42,21 +43,14 @@ class TtnDetailsFragment :
             LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         rvSec.layoutManager = linearLayoutManager
         rvSec.adapter = secListAdapter
-
-        mViewModel.data?.observe(this, Observer {item ->
-            secListAdapter.replace(item.codeList)
-            etNumberTTN.editText?.setText(item?.ttnNumber)
-            etDateTTN.editText?.setText(item?.ttnDate)
-            etAutoNumber.editText?.setText(item?.trackPlate)
-            etTrailerNumber.editText?.setText(item?.trailerPlate)
-            etDriver.editText?.setText(item?.driverName)
-            etSender.editText?.setText(item?.senderName)
-        })
-
+        tvAddZPU.setOnClickListener {
+            secListAdapter.add(TtnModel.Code("", false))
+            rvSec.smoothScrollToPosition(secListAdapter.itemCount-1)
+        }
         val divider = DividerItemDecoration(rvSec.context, linearLayoutManager.orientation)
         divider.setDrawable(requireContext().getDrawable(R.drawable.rv_divider)!!)
         rvSec.addItemDecoration(divider)
-        secListAdapter.setOnClickListener = {
-        }
+//        secListAdapter.setOnClickListener = {
+//        }
     }
 }
