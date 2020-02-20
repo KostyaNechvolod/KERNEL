@@ -20,7 +20,8 @@ class CreateTtnVM (private val userRepository: TtnRepository) : BaseViewModel() 
         "ttn_date" to MutableLiveData(""),
         "truck_number" to MutableLiveData(""),
         "trailer_number" to MutableLiveData(""),
-        "driver" to MutableLiveData("")
+        "driver" to MutableLiveData(""),
+        "sender" to MutableLiveData("")
     )
     val codeList = MutableLiveData<List<TtnModel.Code>>()
 
@@ -30,11 +31,11 @@ class CreateTtnVM (private val userRepository: TtnRepository) : BaseViewModel() 
                 _loadingState.value = LoadingState.LOADING
                 userRepository.addItem(TtnModel(
                     ttnNumber = (fields["ttn_number"]?.value!!),
-                    ttnDate = (fields["ttn_number"]?.value!!),
-                    trailerPlate = (fields["ttn_number"]?.value!!),
-                    trackPlate = (fields["ttn_number"]?.value!!),
-                    driverName = (fields["ttn_number"]?.value!!),
-                    senderName = (fields["ttn_number"]?.value!!),
+                    ttnDate = (fields["ttn_date"]?.value!!),
+                    trailerPlate = (fields["truck_number"]?.value!!),
+                    trackPlate = (fields["trailer_number"]?.value!!),
+                    driverName = (fields["driver"]?.value!!),
+                    senderName = (fields["sender"]?.value!!),
                     codeList = codeList.value!!
                     ))
                 _loadingState.value = LoadingState.LOADED
