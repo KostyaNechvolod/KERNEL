@@ -27,7 +27,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Number TTN" />
+                    android:hint="@string/ttn_number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -46,7 +46,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Date TTN" />
+                    android:hint="@string/ttn_date" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,7 +64,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Auto Number" />
+                    android:hint="@string/truck_plate" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -82,7 +82,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Trailer number" />
+                    android:hint="@string/trailer_plate" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,7 +100,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Driver" />
+                    android:hint="@string/driver_name" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -118,7 +118,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Sender" />
+                    android:hint="@string/sender_name" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

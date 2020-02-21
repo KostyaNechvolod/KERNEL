@@ -29,8 +29,8 @@ class TtnRepository( private val ttnDao: TtnDao) {
                         ttnDate = "${i}.${i + 2}.${i+2000}",
                         trailerPlate = "1234567",
                         trackPlate = "7654321",
-                        senderName = "sender${i}",
-                        driverName = "driver${i + 1}",
+                        senderName = "Sender${i}",
+                        driverName = "Driver${i + 1}",
                         codeList = listOf(TtnModel.Code(codeNumber = "12345", isGood = true))
                     )
                 )
