@@ -22,7 +22,7 @@ class HomeVM(private val userRepository: TtnRepository) : BaseViewModel() {
     val data = userRepository.data
 
     init {
-//        fetchData()
+        fetchData()
     }
 
     private fun fetchData() {
